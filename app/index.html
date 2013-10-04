@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app>
+  <head>
+  <meta charset="utf-8">
+    <title>Angularjs Backend-App42</title>
+	<script src="App42-all-1.8.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+	 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="todo.css">
+    <script src="main.js"></script>
+	</head>
+   <body>
+   <a href="http://api.shephertz.com/" target="_blank"><img src="shephertz-logo.png" id="shephertz"/></a>
+   <img src="ajax-loader.gif" id="loading-indicator" style="display:none"/>
+  <div ng-controller="Login">
+<ul class="nav nav-list" navlist>     
+	 <li class="active" ng-click="setActive($event)" ng-show="show.register">
+                    <a href="" ng-click="setComponent('register')">Sign Up</a>
+                </li>
+				 <li class="active" ng-click="setActive($event)" ng-show="show.todo">
+                    <a href="" ng-click="setComponent('todo')">To-do</a>
+                </li>
+				 <li class="active" ng-click="setActive($event)" ng-show="show.login">
+                    <a href="" ng-click="setComponent('login')">Login</a>
+                </li>
+				 <li class="active" ng-show="show.logout" ng-click="logout()">
+                    <a href="" >Log-out</a>
+                </li>
+               </ul>
+			   
+  <div class="span10">
+            <div ng-switch on="component" >
+                <div ng-switch-when="register" ng-include="'view/register.html'"></div>
+                <div ng-switch-when="login" ng-include="'view/login.html'"></div>
+				<div ng-switch-when="todo" ng-include="'view/todo.html'"></div>
+                <div ng-switch-when="cm"></div>
+                <div ng-switch-default></div>
+            </div>
+        </div>
+		<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=104262633115521";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like-box" style="margin-left: 451px;"data-href="https://www.facebook.com/pages/App42Todo-List/520149971396895?ref=hl" data-width="292" data-height="The height of the plugin in pixels (optional)." data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="true"></div>
+</div>
+	  
+  </body>
+ </html>

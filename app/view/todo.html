@@ -1,0 +1,27 @@
+<h2 style="margin-left: 516px">Todo</h2>
+    <div ng-controller="TodoCtrl">
+      <span style="margin-left: 503px;">{{remaining()}} of {{todos.length}} remaining</span>
+      <ul class="unstyled"style="margin-left: 271px;">
+        <li ng-repeat="todo in todos">
+          <input type="checkbox" ng-model="todo.done" ng-click="updateTodo(todo.text,todo.done)">
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+      </ul>
+	  <div class="row">
+	<div class="span8" style="width: 574px; margin-left: 295px">
+      <form ng-submit="addTodo()" name="addNew" class="form-horizontal">
+	  <div class="control-group" style="margin-top:37px;">
+	  <div class="controls">
+        <input type="text" name="addTodo" ng-model="todoText"  ng-pattern="word" required ng-trim="false" size="30"
+               placeholder="Add new todo here">
+			   <span class="help-inline" ng-show="addNew.addTodo.$error.required">
+        Required!</span>
+							</div>
+			   </div>
+			   <div class="form-actions" style="padding-left:235px; margin-top:64px; background-color: rgba(76, 153, 184, 0.69);">
+        <input class="btn btn-large btn-primary" type="submit" value="Add New">
+		</div>
+      </form>
+	  </div>
+	  </div>
+    </div>

@@ -1,0 +1,50 @@
+<div class="row">
+	<div class="span8" style="width: 574px; margin-left: 295px">
+<form name="registerForm" ng-controller="Register" ng-submit="registerUser()" class="form-horizontal">
+<div class="control-group" style="margin-top:37px;">
+<label for="input" class="control-label">	
+					User Name:
+				</label>
+<div class="controls">				
+	  <input type="text" name="input" ng-model="text"
+                          ng-pattern="word" required ng-trim="false" placeholder="Enter your user name" >
+						  <span class="help-inline" ng-show="registerForm.input.$error.required">
+        Required!</span>
+      <span class="help-inline" ng-show="registerForm.input.$error.pattern">
+        Single word only!</span>
+		</div>
+		</div>
+		<div class="control-group">  
+						
+						 <label for="email" class="control-label">	
+					Email:
+				</label>
+				 <div class="controls">
+						 <input type="email" name="email" ng-model="email"
+                          ng-pattern="word" required ng-trim="false" placeholder="Enter your Email" >
+						  
+						  <span class="help-inline" ng-show="registerForm.email.$error.required">
+							Required!</span>
+						  <span class="help-inline" ng-show="registerForm.email.$error.email">
+							Not valid email!</span>
+							</div>
+							</div>
+							<div class="control-group">  
+							<label for="password" class="control-label">	
+					Password:
+				</label>
+				<div class="controls">
+							<input type="password" name="password" ng-model="password"
+                          required ng-trim="false" placeholder="Enter your Password" >
+						  
+						  <span class="help-inline" ng-show="registerForm.password.$error.required">
+							Required!</span>
+							</div>
+							</div>
+							<div class="form-actions" style="padding-left:235px; margin-top:64px; background-color: rgba(76, 153, 184, 0.69);">
+						  <input class="btn btn-large btn-primary" type="submit" value="Register">
+						  </div>
+      
+    </form>
+	</div>
+</div>
